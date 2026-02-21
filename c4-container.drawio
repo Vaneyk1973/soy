@@ -1,0 +1,102 @@
+<mxfile host="app.diagrams.net" modified="2026-02-21T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="c4container" name="C4 Container">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="2" value="Marketplace (System Boundary)" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="1680" height="1080" as="geometry" />
+        </mxCell>
+
+        <mxCell id="10" value="Buyer\nPerson" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Seller\nPerson" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="20" value="Web/Mobile UI\nContainer: SPA/Mobile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="300" y="220" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="API Gateway\nContainer: FastAPI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="620" y="220" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="30" value="Feed Service\nContainer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="920" y="180" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="Catalog Service\nContainer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="920" y="290" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="User Service\nContainer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="920" y="400" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="Order Service\nContainer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="920" y="510" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="Payment Service\nContainer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="920" y="620" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="Notification Service\nContainer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="920" y="730" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="Message Bus\nKafka/RabbitMQ" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="640" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="40" value="Feed DB" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="180" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="Catalog DB" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="290" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="User DB" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="400" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="Order DB" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="510" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="Payment DB" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="620" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="45" value="Notification DB" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="730" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="50" value="Payment Provider\nExternal System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="620" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="Email/SMS Provider\nExternal System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="760" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="100" value="Uses" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="10" target="20"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="101" value="Uses" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="11" target="20"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="102" value="HTTPS" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="20" target="21"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="103" value="REST/gRPC" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="21" target="30"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="104" value="REST/gRPC" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="21" target="31"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="105" value="REST/gRPC" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="21" target="32"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="106" value="REST/gRPC" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="21" target="33"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="110" value="R/W" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="30" target="40"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="111" value="R/W" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="31" target="41"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="112" value="R/W" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="32" target="42"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="113" value="R/W" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="33" target="43"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="114" value="R/W" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="34" target="44"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="115" value="R/W" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="35" target="45"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="120" value="Sync: create payment" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="33" target="34"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="121" value="Sync" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="34" target="50"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="122" value="Async: order events" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="33" target="36"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="123" value="Async: payment events" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="34" target="36"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="124" value="Async: catalog updates" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="31" target="36"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="125" value="Async: events" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="36" target="35"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="126" value="Send messages" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="35" target="51"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
