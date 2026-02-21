@@ -22,7 +22,9 @@ curl -i http://localhost:8000/health
 ```
 
 ## C4 Container диаграмма
-Файл: `c4-container.md`
+- Текстовая версия: `c4-container.md`
+- Редактируемый draw.io: `c4-container.drawio`
+- Экспорт PNG: `c4-container.png`
 
 ## Домены и ответственность
 - **Feed**: формирование персонализированной ленты (ранжирование, признаки, фичи).
