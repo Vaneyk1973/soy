@@ -1,0 +1,82 @@
+version: "3.9"
+
+services:
+  booking-db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: booking
+      POSTGRES_USER: booking
+      POSTGRES_PASSWORD: booking
+    ports:
+      - "5433:5432"
+    volumes:
+      - booking_db_data:/var/lib/postgresql/data
+
+  flight-db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: flight
+      POSTGRES_USER: flight
+      POSTGRES_PASSWORD: flight
+    ports:
+      - "5434:5432"
+    volumes:
+      - flight_db_data:/var/lib/postgresql/data
+
+  redis-master:
+    image: redis:7
+    command: ["redis-server", "--appendonly", "yes"]
+
+  redis-replica:
+    image: redis:7
+    command: ["redis-server", "--replicaof", "redis-master", "6379"]
+    depends_on:
+      - redis-master
+
+  redis-sentinel:
+    image: redis:7
+    command: ["redis-server", "/etc/redis/sentinel.conf", "--sentinel"]
+    volumes:
+      - ./redis/sentinel.conf:/etc/redis/sentinel.conf
+    depends_on:
+      - redis-master
+    ports:
+      - "26379:26379"
+
+  flight-service:
+    build:
+      context: ./flight_service
+    environment:
+      FLIGHT_DATABASE_URL: postgresql+psycopg2://flight:flight@flight-db:5432/flight
+      GRPC_PORT: "50051"
+      GRPC_API_KEY: "flight-api-key"
+      REDIS_SENTINEL_HOSTS: "redis-sentinel:26379"
+      REDIS_SENTINEL_SERVICE: "mymaster"
+      CACHE_TTL_SECONDS: "300"
+    depends_on:
+      - flight-db
+      - redis-master
+      - redis-sentinel
+    ports:
+      - "50051:50051"
+
+  booking-service:
+    build:
+      context: ./booking_service
+    environment:
+      BOOKING_DATABASE_URL: postgresql+psycopg2://booking:booking@booking-db:5432/booking
+      FLIGHT_GRPC_TARGET: "flight-service:50051"
+      GRPC_API_KEY: "flight-api-key"
+      GRPC_TIMEOUT_SEC: "2.0"
+      CB_FAILURE_THRESHOLD: "5"
+      CB_OPEN_TIMEOUT_SEC: "15"
+      CB_WINDOW_SEC: "60"
+    depends_on:
+      - booking-db
+      - flight-service
+    ports:
+      - "8000:8000"
+
+volumes:
+  booking_db_data:
+  flight_db_data:

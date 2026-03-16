@@ -1,0 +1,42 @@
+%% ER diagram in Mermaid
+
+erDiagram
+    FLIGHTS {
+        UUID id PK
+        string flight_number
+        string airline
+        string origin
+        string destination
+        datetime departure_time
+        date departure_date
+        datetime arrival_time
+        int total_seats
+        int available_seats
+        decimal price
+        string status
+        datetime created_at
+    }
+
+    SEAT_RESERVATIONS {
+        UUID id PK
+        UUID booking_id
+        UUID flight_id FK
+        int seat_count
+        string status
+        datetime created_at
+    }
+
+    BOOKINGS {
+        UUID id PK
+        string user_id
+        UUID flight_id
+        string passenger_name
+        string passenger_email
+        int seat_count
+        decimal total_price
+        string status
+        datetime created_at
+    }
+
+    FLIGHTS ||--o{ SEAT_RESERVATIONS : has
+    BOOKINGS ||--|| SEAT_RESERVATIONS : maps_to

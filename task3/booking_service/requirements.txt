@@ -1,0 +1,9 @@
+fastapi==0.110.0
+uvicorn==0.29.0
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+alembic==1.13.1
+grpcio==1.62.1
+grpcio-tools==1.62.1
+protobuf==4.25.3
+pydantic==2.6.4
